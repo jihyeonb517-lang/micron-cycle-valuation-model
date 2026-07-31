@@ -2,13 +2,13 @@
 Converts the three-stage RIM discount rates from manual entry to a CAPM build-up. Beta is derived from the contract-fixed revenue share.,,,,,,
 ,,,,,,
 1. CAPM Components,,,,,,
-"[*] Risk-free rate, US 10-year",4.30%,,,,,Linked to Assumptions B13. Verify and update directly.
+"[*] Risk-free rate, US 10-year",4.67%,,,,,Linked to Assumptions B13. Verify and update directly.
 [*] Equity risk premium (ERP),5.00%,,,,,Linked to Assumptions B15. Typically 4.5-5.5%.
 Observed beta (5Y),2.14,,,,,Finviz 2026-07-28
 CAPM base cost of equity,15.00%,,,,,"Rf + beta x ERP, at the current mix"
 ,,,,,,
 2. [*] Beta Decomposition — Does the Contract Structure Lower Beta?,,,,,,
-The observed beta of 2.14 already embeds a 23% HBM share. This splits it into spot and contract components.,,,,,,
+The observed beta of 2.21 already embeds a 23% HBM share. This splits it into spot and contract components.,,,,,,
 FY2026 HBM revenue share,23.02%,,,,,MixPath reproduces the actual 23.0%
 [*] Contract-portion beta,0.8,,,,,[*] Systematic risk of the five-year volume contracts and customer-qualified business. No observations exist [ESTIMATE]
 Implied spot-portion beta (back-solved),2.5407,,,,,(observed beta - HBM share x contract beta) / spot share
