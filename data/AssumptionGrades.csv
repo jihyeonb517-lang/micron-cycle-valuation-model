@@ -1,0 +1,56 @@
+(21) Assumption Grade Management — What to Fix First,,,,,,,
+"Confidence grade crossed with sensitivity rank. Low-grade, high-sensitivity items are the top update priority.",,,,,,,
+,,,,,,,
+1. Grade Definitions,,,,,,,
+A,"Confirmed actual — SEC filings, company disclosure, direct retrieval. If it changes, a fact has changed.",,,,,,
+B,"Published estimate — consensus, TrendForce and other specialist publications. Updated on a regular cycle.",,,,,,
+C,User estimate — unverified judgment. This is the bottleneck on model quality.,,,,,,
+,,,,,,,
+2. [*] Full Input Inventory — Ordered by Sensitivity Rank,,,,,,,
+Tab,Item,Cell,Grade,Source / Basis,Next update,V0 swing,Rank
+ROE_Build,Cumulative buyback spend,B33:E33,C,BofA $31.7B versus UBS $380B; midpoint set arbitrarily,2026-12-09 CHIPS restriction lifts,24.80%,1
+SegmentMargin,Commodity DRAM base OPM,B45,C,Stated in handoff note section 4.4; primary source unconfirmed,Quarterly segment margins,18.64%,2
+TerminalROE,Peak multiple,B15,C,History gives 1.18x (peak / mid-year); set conservatively at 1.5,On the next cycle observation,17.76%,3
+DiscountRate,Stage adjustments,C26:C28,C,Back-solved to reproduce the prior manual 12/17/16,LTA terms disclosed,16.55%,4
+SegmentMargin,Commodity ASP index,B40:E40,C,FY29 fitted to the consensus gross margin decline,"Spot prices, ongoing",12.56%,5
+MixPath,ASP premium case,B11:B14,C,FY2026 is actual (grade A); FY2027 onward is estimated,"HBM4 contract price, Nov-Dec 2026",2.51%,6
+TerminalROE,Contract trough ROE,B22,C,[*] Zero observations. No downturn since HBM became material.,"LTA floor price, year-end to early next year",2.84%,7
+Consensus,FY2028 BPS,F24,B,12 estimates. Median 437.94 versus mean 413.67.,Quarterly consensus refresh,4.76%,8
+RIM_3Stage,Terminal growth rate g,B11,C,"Fixed at 4%, approximating nominal GDP",No review needed,3.59%,9
+MixPath,"HBM wafer share, FY28-29",D6:E6,C,TrendForce publishes only through 2027; later years extrapolated,Next TrendForce publication,5.25%,10
+SegmentMargin,HBM contract ASP index,B41:E41,C,Quantifies the TrendForce call for a multi-fold rise in 2027,"HBM4 contract price, Nov-Dec 2026",0,11
+SegmentMargin,HBM base OPM,B46,C,"Reflects the 2026 contract-lag state, consistent with Micron CEO remarks",Quarterly results,0,12
+MixPath,Trade ratio,B7:E7,B,FY26-27 back-solved from TrendForce wafer and bit shares,Next TrendForce publication,0,13
+,,,,,,,
+3. Grade A — Confirmed Actuals (a change here means a fact changed),,,,,,,
+Assumptions,Current share price,B5,A,"User-specified, 2026-07-31",,,
+Assumptions,Shares outstanding,B6,A,stockanalysis.com 2026-07-28,,,
+MixPath,FY2026 ASP premium of 4.39x,B15,A,"Back-solved from the actual Micron mix (HBM 23% of revenue, 9% of bits)",,,
+MixPath,FY2026 revenue mix 53/23/24,B26:B28,A,"Handoff note, section 3.5",,,
+TerminalROE,Spot trough ROE of -12.4%,B21,A,"Micron FY2023 actual. Revenue -49.5%, gross margin -9.1%.",,,
+HistoricalCycle,FY2021~25 ROE·P/B,Entire tab,A,Micron confirmed actuals,,,
+Consensus,FY2025 actuals column,Column C,A,Confirmed actual,,,
+,,,,,,,
+4. Grade B — Published Estimates (on a regular update cycle),,,,,,,
+Consensus,"All line items (revenue, EPS, BPS, ROE and others)",,B,"Always check the estimate count - FY2028 BPS has 12, ROE has 16",After each quarterly report,,
+MixPath,"HBM wafer and bit share, FY26-27",,B,18/22/30% and 8/9/13%,Next TrendForce press release,,
+DiscountRate,Risk-free rate,,B,US 10-year Treasury,Ongoing,,
+DiscountRate,Beta (5Y),,B,"2.14 per Finviz, 2026-07-28",Monthly,,
+ROE_Build,Effective tax rate,,B,"14.5%, back-solved from consensus pretax versus net income",Quarterly,,
+,,,,,,,
+,,,,,,,
+5. Update Calendar — What Gets Revised and When,,,,,,,
+Date,Event,Cells to update,Grade change,,,,
+2026-08-21,Apple replies to the Senate letter,DiscountRate C28 (terminal adjustment),Stays C,,,,
+2026-09~10,Micron FY26 Q4 results,All Consensus items plus SegmentMargin B45/B46 (actual margins),B45 and B46: C to A,,,,
+2026-10,SK hynix Q3,SegmentMargin B40 (commodity ASP),Stays C,,,,
+2026-11~12,HBM4 annual contract price negotiation,SegmentMargin B41:E41 (HBM ASP index),B41: C to A,,,,
+2026-12-09,Micron CHIPS restriction lifts,ROE_Build B33:E33 (cumulative buybacks),B33: C to A  [*] highest sensitivity,,,,
+Year-end to early next year,LTA terms disclosed,TerminalROE B22 and DiscountRate B13 (contract beta),B22: C to B,,,,
+Next TrendForce release,2028 wafer and bit share forecast,MixPath D6:E6 and D7:E7,C to B,,,,
+,,,,,,,
+,,,,,,,
+"Note: Top priority is grade C combined with high sensitivity. Currently that is (1) cumulative buybacks (Dec 9), (2) commodity base OPM (late-Sep results), (3) peak multiple, (4) stage adjustments.",,,,,,,
+"Note: Every HBM-related parameter ranks in the bottom tier (10th to 13th). Analytical effort and impact on the result are misaligned, so reconsider where time goes.",,,,,,,
+"Note: 11 of 13 inputs are grade C. The calculation structure is complete, but input confidence remains low - exactly the point raised in review.",,,,,,,
+Note: This file is not investment advice. Every grade C value must be independently verified by the user.,,,,,,,

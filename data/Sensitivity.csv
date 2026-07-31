@@ -1,0 +1,56 @@
+(20) One-Way Sensitivity (Tornado) — Which Assumption Dominates,,,,,,,,
+Each parameter is moved on its own to show the swing in intrinsic value V0. The ranking by swing is the update priority order.,,,,,,,,
+,,,,,,,,
+1. Base Parameters (linked from other tabs — do not edit here),,,,,,,,
+  HBM wafer share (FY2029),38.00%,,,,,,,
+  Trade ratio (FY2029),3.1,,,,,,,
+  ASP premium (FY2029),2,,,,,,,
+  DRAM revenue share (FY2029),80.00%,,,,,,,
+  Commodity base OPM,80.00%,,,,,,,
+  Commodity ASP index (FY2029),0.61,,,,,,,
+  HBM base OPM,50.00%,,,,,,,
+  HBM ASP index (FY2029),1.79,,,,,,,
+  NAND base OPM,50.00%,,,,,,,
+  NAND ASP index (FY2029),0.82,,,,,,,
+  FY2029 revenue ($m),289549,,,,,,,
+  Effective tax rate,14.50%,,,,,,,
+  FY2029 average equity ($m),"611,126.6",,,,,,,
+  Average buyback deduction ($m),105000,,,,,,,
+  Spot trough ROE,-12.40%,,,,,,,
+  Contract trough ROE,15.00%,,,,,,,
+  Peak multiple,1.5,,,,,,,
+  Weight on peak years,25.00%,,,,,,,
+  Weight on mid years,50.00%,,,,,,,
+  Weight on trough years,25.00%,,,,,,,
+  Fixed component B0 + RI (RIM),319.58,,,,,,,
+  FY2028 BPS (terminal equity),437.94,,,,,,,
+  FY2028 discount factor,0.7117,,,,,,,
+  Terminal discount rate,16.00%,,,,,,,
+  Terminal growth rate g,4.00%,,,,,,,
+,,,,,,,,
+2. Check — Does the Chain Reproduce the RIM Result?,,,,,,,,
+  V0 reproduced by the chain,560.55,,,,,,,
+  RIM section 11 computed directly,560.55,,,,,,,
+  Difference,0,,,,,,,Zero confirms the chain reproduces the RIM exactly
+,,,,,,,,
+3. Tornado — V0 Swing by Parameter,,,,,,,,
+Parameter,Base,Down,Up,V0 (down),V0 (up),Swing ($),Swing (%),Basis for the range
+HBM wafer share (FY2029),38.00%,33.00%,43.00%,552.71,568.71,16,2.85%,+/-5pp — as suggested in review
+Trade ratio (FY2029),3.1,2.8,3.4,564.46,557.14,7.33,1.31%,+/-0.30x — the HBM4 to HBM4E step
+ASP premium (FY2029),2,1,3,538.6,577.05,38.44,6.86%,+/-1.00x — half the gap between cases 2 and 3
+Commodity base OPM,80.00%,75.00%,85.00%,508.31,612.79,104.48,18.64%,+/-5pp — as suggested in review
+Commodity ASP index (FY2029),0.61,0.51,0.71,519.58,589.98,70.4,12.56%,+/-10% — spot price movement
+HBM base OPM,50.00%,45.00%,55.00%,553.51,567.59,14.08,2.51%,+/-5pp — as suggested in review
+HBM ASP index (FY2029),1.79,1.59,1.99,551.69,567.62,15.93,2.84%,+/-20% — contract negotiation range
+Average buyback deduction ($m),105000,55000,155000,497.9,636.92,139.02,24.80%,+/-$50B — within the BofA to UBS range
+Contract trough ROE,15.00%,5.00%,25.00%,545.83,575.27,29.44,5.25%,"+/-10pp — zero observations, so a wide range"
+Peak multiple,1.5,1.25,1.75,510.78,610.32,99.54,17.76%,+/-0.25x
+FY2028 BPS (terminal equity),437.94,413.67,462.21,547.19,573.9,26.71,4.76%,+/-$24.27 — the consensus median versus mean gap
+Terminal discount rate,16.00%,15.00%,17.00%,610.79,518.04,92.75,16.55%,+/-1pp — as suggested in review
+Terminal growth rate g,4.00%,3.50%,4.50%,550.91,571.02,20.12,3.59%,+/-0.5pp — as suggested in review
+,,,,,,,,
+Base V0,560.55,,,,,,,
+,,,,,,,,
+Note: The swing ranking is the update priority. Managing only the top three or four accurately determines most of the model quality.,,,,,,,,
+"Note: The ranges are not arbitrary. They come from observable spreads - contract negotiation ranges, the consensus distribution, and the BofA to UBS buyback range.",,,,,,,,
+"Note: One-way sensitivity hides interactions. For two variables moving together, see the grids on RIM_3Stage row 131, TerminalROE row 43 and PB_Bridge row 42.",,,,,,,,

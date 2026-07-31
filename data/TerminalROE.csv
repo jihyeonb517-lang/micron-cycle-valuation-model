@@ -1,0 +1,56 @@
+(15) Terminal ROE Build-up — Generating the RIM Input,,,,,,
+Terminal ROE is derived from mix and margins instead of being entered by hand. RIM_3Stage cell B10 reads B27 on this tab.,,,,,,
+,,,,,,
+1. Anchor — FY2029 Derived Value (from ROE_Build),,,,,,
+FY2029 derived ROE,30.66%,,,,,Buyback-adjusted ROE (ROE_Build row 36). Final year of the explicit forecast.
+FY2028 derived ROE (reference),47.26%,,,,,
+FY2029 HBM share of total revenue (from MixPath),22.67%,,,,,
+,,,,,,
+"2. Cycle Composition — Terminal Is a Through-Cycle Average, Not a Single Year",,,,,,
+[*] Weight on peak years,25.00%,,,,,Assumes one peak year in a four-year cycle
+[*] Weight on mid years,50.00%,,,,,"Two transition years, rising and falling"
+[*] Weight on trough years,25.00%,,,,,One downturn year
+Sum check,1,OK,,,,
+Base ROE (mid-cycle) = FY2029 derived,30.66%,,,,,
+[*] Peak multiple (vs base),1.5,,,,,History: peak 18.5% / mid-year average 15.7% = 1.18x. Allowed up to 1.5x to stay conservative.
+Peak ROE,45.99%,,,,,
+,,,,,,
+3. [*] Trough ROE — Where HBM Contracts Provide Downside Support,,,,,,
+Spot-exposed share,77.33%,,,,,Commodity DRAM plus NAND. Prices reprice immediately on spot.
+Contract-fixed share (= HBM revenue share),22.67%,,,,,MixPath FY2029 HBM share of total revenue
+"[*] Trough ROE, spot-exposed portion",-12.40%,,,,,FY2023 actual of -12.4%. Revenue fell 49.5% and gross margin went to -9.1% on inventory write-downs.
+"[*] Trough ROE, contract-fixed portion",15.00%,,,,,[*] Critical assumption. Volume is locked but price rolls annually - can this stay profitable? Zero observations exist.
+Trough ROE,-6.19%,,,,,
+   Reference: without contract support (prior regime),-12.40%,,,,,
+,,,,,,
+4. [*] Result — The Cell RIM_3Stage Reads,,,,,,
+Derived terminal ROE,25.28%,,,,,peak weight x peak ROE + mid weight x base ROE + trough weight x trough ROE
+Conservative band (20-30%) test,Inside band,,,,,
+Reference: terminal ROE without contract support,23.72%,,,,,
+Contribution of the HBM contract structure (pp),1.55%,,,,,This is the quantified size of the claim that contracts de-cyclicalize the business
+,,,,,,
+5. Historical Check — Does This Method Reproduce the Record?,,,,,,
+  FY2021 ROE,14.05%,,,,,
+  FY2022 ROE (peak),18.51%,,,,,
+  FY2023 ROE (trough),289549,,,,,
+  FY2024 ROE,50612660.00%,,,,,
+  FY2025 ROE,17.18%,,,,,
+  Five-year simple average,7.82%,,,,,
+  Average excluding FY2023 and FY2024,16.58%,,,,,"Excluding those two years gives 16.6%. If the contract regime removes them, this is the anchor."
+  This method applied to history (assuming zero contract share),11.11%,,,,,Comes out above the five-year simple average of 7.8% because downturn years were 40% of that window
+,,,,,,
+6. Sensitivity — Terminal ROE (rows: contract trough ROE / columns: FY2029 HBM revenue share),,,,,,
+Contract trough ROE \ HBM share,10.00%,20.00%,23.00%,30.00%,37.20%,45.00%
+-12.40%,23.72%,23.72%,23.72%,23.72%,23.72%,23.72%
+0,24.03%,24.34%,24.44%,24.65%,24.88%,25.12%
+10.00%,24.28%,24.84%,25.01%,25.40%,25.81%,26.24%
+15.00%,24.41%,25.09%,25.30%,25.78%,26.27%,26.81%
+25.00%,24.66%,25.59%,25.88%,26.53%,27.20%,27.93%
+35.00%,24.91%,26.09%,26.45%,27.28%,28.13%,29.06%
+Current selection,25.28%,,,,,
+,,,,,,
+Note: Row 44 (contract trough at -12.4%) is the case where contracts do nothing. The gap between that row and the others is the value of the contract structure.,,,,,,
+Note: Moving toward the lower left is the bull case that contracts de-cyclicalize earnings. The upper right is not supported by observation.,,,,,,
+"Note: The contract trough ROE is unverified. There has been no downturn since HBM became material in 2024, so there are zero observations.",,,,,,
+"Note: Resolution point is disclosure of LTA terms around year-end. If a floor price exists, row 22 should sit at 15% or above; if not, 5% or below is the consistent setting.",,,,,,
+"Sources: Historical ROE from the HistoricalCycle tab (FY2021-25 actuals). FY2023 revenue -49.5%, gross margin -9.1%.",,,,,,

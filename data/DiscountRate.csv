@@ -1,0 +1,45 @@
+"(19) Discount Rate Build-up — Rf + Beta x ERP, With Beta Derived From Mix",,,,,,
+Converts the three-stage RIM discount rates from manual entry to a CAPM build-up. Beta is derived from the contract-fixed revenue share.,,,,,,
+,,,,,,
+1. CAPM Components,,,,,,
+"[*] Risk-free rate, US 10-year",4.30%,,,,,Linked to Assumptions B13. Verify and update directly.
+[*] Equity risk premium (ERP),5.00%,,,,,Linked to Assumptions B15. Typically 4.5-5.5%.
+Observed beta (5Y),2.14,,,,,Finviz 2026-07-28
+CAPM base cost of equity,15.00%,,,,,"Rf + beta x ERP, at the current mix"
+,,,,,,
+2. [*] Beta Decomposition — Does the Contract Structure Lower Beta?,,,,,,
+The observed beta of 2.14 already embeds a 23% HBM share. This splits it into spot and contract components.,,,,,,
+FY2026 HBM revenue share,23.02%,,,,,MixPath reproduces the actual 23.0%
+[*] Contract-portion beta,0.8,,,,,[*] Systematic risk of the five-year volume contracts and customer-qualified business. No observations exist [ESTIMATE]
+Implied spot-portion beta (back-solved),2.5407,,,,,(observed beta - HBM share x contract beta) / spot share
+,,,,,,
+3. Derived Beta and Cost of Equity by Year,,,,,,
+Item,FY2026,FY2027,FY2028,FY2029,,
+HBM revenue share (from MixPath),23.02%,17.94%,21.13%,22.67%,,
+Spot-exposed share,76.98%,82.06%,78.87%,77.33%,,
+Derived beta,2.14,2.2284,2.1728,2.1461,,
+Derived cost of equity,15.00%,15.44%,15.16%,15.03%,,A larger contract share pulls beta and cost of equity down
+,,,,,,
+4. Mapping to the Three Stages — Read by RIM_3Stage B7/B8/B9,,,,,,
+"Each stage carries an explicit [*] adjustment. The adjustment is judgment, and it is shown in a cell rather than hidden.",,,,,,
+Stage,Base cost of equity,[*] Adjustment (pp),Applied discount rate,Rationale,,
+Stage 1 (FY2026-28),15.44%,-3.44%,12.00%,Near-term visibility is high given five-year HBM volume contracts and fab lead times. Based on the FY2027 cost of equity.,,
+Stage 2 (FY2029),15.03%,1.97%,17.00%,Period of CXMT reaching 600k wpm and domestic Chinese DUV spreading. New capacity landing raises uncertainty.,,
+Terminal,15.03%,0.97%,16.00%,Perpetuity. Between 12-14% if the four-supplier oligopoly holds and 18-20% under commoditization.,,
+,,,,,,
+Note: The default adjustments are back-solved to reproduce the prior manual inputs of 12% / 17% / 16% exactly. Only the structure changed; the numbers did not.,,,,,,
+Note: Setting the adjustments to zero yields the pure CAPM values. Stage 1 rises to 15.4% and intrinsic value falls sharply.,,,,,,
+,,,,,,
+5. Sensitivity — Terminal Discount Rate (rows: contract beta / columns: risk-free rate),,,,,,
+Contract beta \ Rf,3.00%,3.50%,4.30%,5.00%,5.50%,
+0.4,14.71%,15.21%,16.01%,16.71%,17.21%,
+0.6,14.70%,15.20%,16.00%,16.70%,17.20%,
+0.8,14.70%,15.20%,16.00%,16.70%,17.20%,
+1,14.70%,15.20%,16.00%,16.70%,17.20%,
+1.4,14.69%,15.19%,15.99%,16.69%,17.19%,
+1.8,14.68%,15.18%,15.98%,16.68%,17.18%,
+,,,,,,
+Current combination,16.00%,,,,,
+"Note: Even with contract beta at 0.4 and the risk-free rate at 3.0%, the terminal discount rate stays in the low 12% range.",,,,,,
+Note: Contract structure plus falling rates alone will not reach the 10% Nomura argues for. The spot-portion beta itself would have to fall.,,,,,,
+"Note: Resolution point is disclosure of LTA terms around year-end. A floor price would justify lowering row 13, the contract beta.",,,,,,
