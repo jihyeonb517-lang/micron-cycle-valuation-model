@@ -1,0 +1,15 @@
+# Excel lock / temp files
+~$*.xlsx
+~$*.xls
+.~lock.*#
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local working copies
+*_local.xlsx
+*_draft.xlsx
+scratch/
