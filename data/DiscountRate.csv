@@ -4,7 +4,7 @@ Converts the three-stage RIM discount rates from manual entry to a CAPM build-up
 1. CAPM Components,,,,,,
 "[*] Risk-free rate, US 10-year",4.67%,,,,,Linked to Assumptions B13. Verify and update directly.
 [*] Equity risk premium (ERP),5.00%,,,,,Linked to Assumptions B15. Typically 4.5-5.5%.
-Observed beta (5Y),2.14,,,,,Finviz 2026-07-28
+Observed beta (5Y),2.21,,,,,Finviz 2026-07-28
 CAPM base cost of equity,15.00%,,,,,"Rf + beta x ERP, at the current mix"
 ,,,,,,
 2. [*] Beta Decomposition — Does the Contract Structure Lower Beta?,,,,,,
